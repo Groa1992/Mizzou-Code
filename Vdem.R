@@ -233,3 +233,8 @@ plot_data %>%
   labs(title = "U.S. vs G7 Average: Liberal Democracy (1970–present)",
        x = "Year", y = "Score (0–1)", color = NULL)
 
+install.packages("usethis")  # if needed
+library(usethis)
+use_github(protocol = "https", private = FALSE)  # or TRUE if you want it private
+
+
