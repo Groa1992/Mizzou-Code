@@ -249,3 +249,16 @@ Sys.setenv(GITHUB_PAT = pat)                         # expose it to usethis/gh
 
 library(usethis)
 use_github(protocol = "https", private = FALSE)
+
+# 1
+
+library(gitcreds)
+pat <- gitcreds_get("https://github.com")$password
+Sys.setenv(GITHUB_PAT = pat)
+
+# 2
+
+usethis::use_git_ignore(c(".Rhistory", ".Rproj.user", ".RData", ".Ruserdata"))
+
+library(usethis)
+use_github(protocol = "https", private = FALSE)
