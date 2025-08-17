@@ -243,4 +243,9 @@ gitcreds_set("https://github.com")  # paste your personal GitHub token when prom
 library(usethis)
 use_github(protocol = "https", private = FALSE)  # or TRUE for a private repo
 
+library(gitcreds)
+pat <- gitcreds_get("https://github.com")$password   # fetch the token you just saved
+Sys.setenv(GITHUB_PAT = pat)                         # expose it to usethis/gh
 
+library(usethis)
+use_github(protocol = "https", private = FALSE)
