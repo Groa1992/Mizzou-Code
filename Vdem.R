@@ -237,4 +237,10 @@ install.packages("usethis")  # if needed
 library(usethis)
 use_github(protocol = "https", private = FALSE)  # or TRUE if you want it private
 
+library(gitcreds)
+gitcreds_set("https://github.com")  # paste your personal GitHub token when prompted
+
+library(usethis)
+use_github(protocol = "https", private = FALSE)  # or TRUE for a private repo
+
 
