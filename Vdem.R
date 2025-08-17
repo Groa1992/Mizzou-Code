@@ -262,3 +262,14 @@ usethis::use_git_ignore(c(".Rhistory", ".Rproj.user", ".RData", ".Ruserdata"))
 
 library(usethis)
 use_github(protocol = "https", private = FALSE)
+
+ #  Token
+gitcreds::gitcreds_get("https://github.com")  # should show a masked token
+Sys.setenv(GITHUB_PAT = gitcreds::gitcreds_get("https://github.com")$password)
+
+# repo
+
+library(usethis)
+use_github(protocol = "https", private = FALSE)  # TRUE if you want private
+
+
