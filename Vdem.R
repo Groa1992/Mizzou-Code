@@ -272,4 +272,16 @@ Sys.setenv(GITHUB_PAT = gitcreds::gitcreds_get("https://github.com")$password)
 library(usethis)
 use_github(protocol = "https", private = FALSE)  # TRUE if you want private
 
+# next steps
+
+# Add a README you can edit in RStudio
+usethis::use_readme_md(open = TRUE)
+
+# Make sure noisy files stay out of Git
+usethis::use_git_ignore(c(".Rhistory", ".Rproj.user", ".RData", ".Ruserdata"))
+
+# (Optional) If you prefer 'main' instead of 'master'
+# Run these in the Terminal tab:
+# git branch -M main
+# git push -u origin main
 
